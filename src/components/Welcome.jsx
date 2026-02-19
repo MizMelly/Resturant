@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import Im1 from "../assets/Im1.png";      // Desktop/large screen image
-import Im2 from "../assets/Im1-mobile.png";
+import Im2 from "../assets/Im1-mobile.png";         
 
 export default function Welcome() {
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ export default function Welcome() {
           </picture>
         </div>
 
-        {/* RIGHT SIDE – full width on mobile, follows image */}
+        {/* RIGHT SIDE – full width on mobile */}
         <div className="flex flex-col px-5 sm:px-8 md:px-12 lg:px-16 py-8 md:py-12 bg-[#f6f3ee] order-2 md:order-none">
 
           {/* TOP HEADER */}
@@ -97,19 +97,21 @@ export default function Welcome() {
                 </button>
               </div>
 
-              {/* Copyright – small, centered */}
-              <hr className="my-4 md:my-5 border-t border-gray-300 w-full max-w-3xl mx-auto" />
-              <p className="text-center text-gray-500 text-sm">
-                © 2024 Chuks Kitchen. 
-                <a href="/privacy" className="text-blue-500 hover:text-gray-700 mx-2">Privacy Policy</a>
-                <a href="/terms" className="text-blue-500 hover:text-gray-700 mx-2">Terms of Service</a>
-              </p>
+              {/* Copyright – hidden on mobile */}
+              <div className="hidden md:block">
+                <hr className="my-4 md:my-5 border-t border-gray-300 w-full max-w-3xl mx-auto" />
+                <p className="text-center text-gray-500 text-sm">
+                  © 2024 Chuks Kitchen. 
+                  <a href="/privacy" className="text-blue-500 hover:text-gray-700 mx-2">Privacy Policy</a>
+                  <a href="/terms" className="text-blue-500 hover:text-gray-700 mx-2">Terms of Service</a>
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* FOOTER – completely hidden on mobile, only shows on desktop (md and up) */}
+      {/* FOOTER – completely hidden on mobile */}
       <footer className="hidden md:block bg-[#3a1f0f] text-white py-10 md:py-12">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
           {/* Chuks Kitchen */}

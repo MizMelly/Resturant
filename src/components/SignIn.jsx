@@ -15,34 +15,24 @@ export default function SignIn() {
     navigate("/signup");  
   };
 
-  // Handle form submission → navigate to home page
   const handleLogin = (e) => {
     e.preventDefault();
-    
-    // You can add real authentication here later (API call, Firebase, etc.)
-    // For now, just navigate to home page on button click
     console.log("Login attempted with:", { emailOrPhone, password });
-    
-    // Navigate directly to home page after clicking Continue
-    navigate("/home");  // ← Change to "/" if your home is at root
+    navigate("/home");
   };
 
   return (
     <div className="min-h-screen flex flex-col bg-[#fffaf0]">
       <div className="flex-grow grid md:grid-cols-2 relative">
 
-        {/* LEFT IMAGE with subtle vibrant orange overlay & centered text */}
+        {/* LEFT IMAGE */}
         <div className="hidden md:block relative overflow-hidden">
           <img
             src={Im1}
             alt="Nigerian family enjoying meal"
             className="w-full h-full object-cover"
           />
-          
-          {/* Subtle orange overlay */}
-          <div className="absolute inset-0 bg-orange-500/50 "></div>
-
-          {/* Centered text */}
+          <div className="absolute inset-0 bg-orange-500/50"></div>
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-8 z-10">
             <h1 className="font-['Dancing_Script'] text-4xl lg:text-5xl text-white mb-4 drop-shadow-lg">
               Chuks Kitchen
@@ -57,10 +47,11 @@ export default function SignIn() {
         </div>
 
         {/* RIGHT SIDE - Login Form */}
-        <div className="flex flex-col justify-center items-center md:px-10 lg:px-24 py-12 bg-[#fffaf0]">
-          {/* Header */}
-          <div className="mb-10 text-center md:text-left">
-            <h2 className="font-['Dancing_Script'] text-4xl md:text-5xl text-[#c47a2c] mb-2">
+        <div className="flex flex-col justify-center items-center px-5 sm:px-10 md:px-12 lg:px-24 py-10 sm:py-12 bg-[#fffaf0]">
+
+          {/* Header – added more spacing below on mobile */}
+          <div className="mb-10 md:mb-12 text-center md:text-left w-full max-w-md">
+            <h2 className="font-['Dancing_Script'] text-4xl md:text-5xl text-[#c47a2c] mb-3 md:mb-4">
               Chuks Kitchen
             </h2>
             <p className="text-gray-700 text-lg md:text-xl font-medium">
@@ -68,8 +59,8 @@ export default function SignIn() {
             </p>
           </div>
 
-          {/* Form – added onSubmit */}
-          <form onSubmit={handleLogin} className="max-w-md mx-auto md:mx-0 w-full space-y-6">
+          {/* Form */}
+          <form onSubmit={handleLogin} className="max-w-md mx-auto w-full space-y-7">
             {/* Email / Phone */}
             <div>
               <label className="block text-gray-800 font-medium mb-2 text-base">
@@ -110,10 +101,10 @@ export default function SignIn() {
               </a>
             </div>
 
-            {/* Continue Button – now submits the form */}
+            {/* Continue Button */}
             <button 
               type="submit"
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-medium text-base shadow-md transition"
+              className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-medium text-base shadow-md transition mt-2"
             >
               Continue
             </button>
