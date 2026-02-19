@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    // FOOTER
-    <footer className="bg-[#3a1f0f] text-white py-10 md:py-12">
+    // FOOTER – hidden on mobile, visible on desktop
+    <footer className="hidden md:block bg-[#3a1f0f] text-white py-10 md:py-12">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
         {/* Chuks Kitchen */}
         <div className="col-span-2 sm:col-span-1">

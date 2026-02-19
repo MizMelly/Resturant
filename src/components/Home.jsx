@@ -27,31 +27,31 @@ export default function Home() {
         </div>
 
         {/* Text + Button – fully left-aligned, smaller headline */}
-<div className="relative z-10 px-6 sm:px-10 md:px-16 lg:px-24 text-white text-left max-w-5xl mx-auto">
-  {/* Smaller headline – fits better on one line, left-aligned */}
-  <h1 className="text-3xl xs:text-4xl sm:text-4.5xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 drop-shadow-2xl leading-tight">
-    The Heart of Nigerian Home <br className="sm:hidden" /> Cooking
-  </h1>
-  <p className="text-lg sm:text-xl md:text-2xl leading-relaxed drop-shadow-lg mb-8 md:mb-12 max-w-3xl">
-    Handcrafted with passion, delivered with care.
-  </p>
-  <Link
-    to="/explore"
-    className="inline-block bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 md:px-12 md:py-5 rounded-xl font-semibold text-lg md:text-xl transition shadow-xl hover:shadow-2xl"
-  >
-    Discover what's new
-  </Link>
-</div>
+        <div className="relative z-10 px-6 sm:px-10 md:px-16 lg:px-24 text-white text-left max-w-5xl mx-auto">
+          {/* Smaller headline – fits better on one line, left-aligned */}
+          <h1 className="text-3xl xs:text-4xl sm:text-4.5xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 drop-shadow-2xl leading-tight">
+            The Heart of Nigerian Home <br className="sm:hidden" /> Cooking
+          </h1>
+          <p className="text-lg sm:text-xl md:text-2xl leading-relaxed drop-shadow-lg mb-8 md:mb-12 max-w-3xl">
+            Handcrafted with passion, delivered with care.
+          </p>
+          <Link
+            to="/explore"
+            className="inline-block bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 md:px-12 md:py-5 rounded-xl font-semibold text-lg md:text-xl transition shadow-xl hover:shadow-2xl"
+          >
+            Discover what's new
+          </Link>
+        </div>
       </section>
 
-      {/* Search Bar – optional, made subtle and centered (remove if you don't want it) */}
-      <div className="relative z-30 -mt-12 px-6 sm:px-10 md:px-16 lg:px-24">
+      {/* Search Bar – pushed down a little */}
+      <div className="relative z-30 -mt-8 sm:-mt-10 px-6 sm:px-10 md:px-16 lg:px-24">
         <div className="max-w-4xl mx-auto">
           <div className="relative">
             <input
               type="text"
               placeholder="What are you craving for today?"
-              className="w-full h-14 sm:h-16 px-6 pl-14 rounded-full bg-white/90 backdrop-blur-lg border border-gray-200 shadow-2xl text-base sm:text-lg focus:outline-none focus:ring-2 focus:ring-orange-500 placeholder-gray-500"
+              className="w-full h-14 sm:h-16 px-6 pl-14 rounded-lg bg-white/90 backdrop-blur-lg border border-gray-200 shadow-2xl text-base sm:text-lg focus:outline-none focus:ring-2 focus:ring-orange-500 placeholder-gray-500"
             />
             <span className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
