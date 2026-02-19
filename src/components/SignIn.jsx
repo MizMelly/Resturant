@@ -49,7 +49,7 @@ export default function SignIn() {
         {/* RIGHT SIDE - Login Form */}
         <div className="flex flex-col justify-center items-center px-5 sm:px-10 md:px-12 lg:px-24 py-10 sm:py-12 bg-[#fffaf0]">
 
-          {/* Header – added more spacing below on mobile */}
+          {/* Header */}
           <div className="mb-10 md:mb-12 text-center md:text-left w-full max-w-md">
             <h2 className="font-['Dancing_Script'] text-4xl md:text-5xl text-[#c47a2c] mb-3 md:mb-4">
               Chuks Kitchen
@@ -144,8 +144,8 @@ export default function SignIn() {
         </div>
       </div>
 
-      {/* FOOTER */}
-      <footer className="bg-[#3a1f0f] text-white py-10 md:py-12">
+      {/* FOOTER – completely hidden on mobile (below 768px) */}
+      <footer className="hidden md:block bg-[#3a1f0f] text-white py-10 md:py-12">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
           {/* Chuks Kitchen */}
           <div className="col-span-2 sm:col-span-1">
