@@ -27,28 +27,33 @@ export default function Welcome() {
         {/* RIGHT SIDE – full width on mobile */}
         <div className="flex flex-col px-5 sm:px-8 md:px-12 lg:px-16 py-8 md:py-12 bg-[#f6f3ee] order-2 md:order-none">
 
-          {/* TOP HEADER */}
-          <div className="flex items-center justify-between mb-8 md:mb-12">
-            <h2 className="font-['Dancing_Script'] text-3xl sm:text-4xl md:text-5xl text-[#c47a2c]">
-              Chuks Kitchen
-            </h2>
+          {/* TOP HEADER – Sign In up, logo down ONLY on mobile */}
+          <div className="mb-8 md:mb-12">
+            {/* Sign In button first on mobile */}
+            <div className="flex justify-end mb-4 md:mb-0">
+              <button
+                onClick={() => navigate("/signin")}
+                className="border-2 border-blue-500 text-blue-600 px-5 sm:px-6 py-2 sm:py-2.5 rounded-lg text-sm sm:text-base font-medium hover:bg-blue-50 transition active:scale-95 whitespace-nowrap"
+              >
+                Sign In
+              </button>
+            </div>
 
-            <button
-              onClick={() => navigate("/signin")}
-              className="border-2 border-blue-500 text-blue-600 px-5 sm:px-6 py-2 sm:py-2.5 rounded-lg text-sm sm:text-base font-medium hover:bg-blue-50 transition active:scale-95 whitespace-nowrap"
-            >
-              Sign In
-            </button>
+            {/* Chuks Kitchen logo below on mobile */}
+            <div className="text-center md:text-left">
+              <h2 className="font-['Dancing_Script'] text-3xl sm:text-4xl md:text-5xl text-[#c47a2c]">
+                Chuks Kitchen
+              </h2>
+            </div>
           </div>
 
           {/* MAIN CONTENT */}
           <div className="flex-grow flex flex-col justify-center">
             <div className="w-full max-w-4xl mx-auto space-y-8 md:space-y-10">
 
-              {/* Headline */}
-              <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 leading-tight whitespace-nowrap">
-                Your Authentic Taste of Nigeria
-              </h1>
+            {/* Headline */}
+            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-900 leading-tight">
+              Your Authentic Taste<br className="sm:hidden" /> of Nigeria</h1>
 
               <p className="text-gray-600 text-base sm:text-lg md:text-xl leading-relaxed">
                 Experience homemade flavors delivered fresh to your desk or home.  
