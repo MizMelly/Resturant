@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";  
 import Im1 from "../assets/Im1.png";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
@@ -40,12 +41,11 @@ export default function SignUp() {
 
           {/* Form Title */}
           <div className="mb-10">
+            <h2 className="font-['Dancing_Script'] text-4xl md:text-5xl text-[#c47a2c] mb-2 text-center md:text-left">
+              Chuks Kitchen</h2>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-800 text-center md:text-left">
               Create your Account
             </h3>
-            <p className="text-center md:text-left text-gray-600 mt-2 text-lg">
-              Join Chuks Kitchen today
-            </p>
           </div>
 
           {/* Form */}
@@ -162,8 +162,8 @@ export default function SignUp() {
         </div>
       </div>
 
-      {/* DARK BROWN FOOTER */}
-      <footer className="bg-[#3a1f0f] text-white py-12">
+      {/* DARK BROWN FOOTER – hidden on mobile */}
+      <footer className="hidden md:block bg-[#3a1f0f] text-white py-12">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
 
           {/* Chuks Kitchen */}
