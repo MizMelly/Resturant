@@ -13,22 +13,20 @@ const chef3 = popular3;
 export default function Home() {
   return (
     <div className="min-h-screen bg-white font-sans overflow-x-hidden select-none cursor-default">
-      {/* HERO SECTION – full bleed, no gap after navbar */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background image – full bleed */}
+      {/* HERO SECTION */}
+      <section className="relative h-[100svh] sm:h-screen flex items-center justify-center overflow-hidden">
+        {/* Background image */}
         <div className="absolute inset-0 z-0">
           <img
             src={home1}
             alt="Nigerian food spread"
             className="w-full h-full object-cover brightness-95"
           />
-          {/* Stronger gradient overlay for text readability */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/70" />
         </div>
 
-        {/* Text + Button – fully left-aligned, smaller headline */}
+        {/* Text + Button */}
 <div className="relative z-10 px-6 sm:px-10 md:px-16 lg:px-24 text-white text-left max-w-5xl mx-auto">
-  {/* Smaller headline – fits better on one line, left-aligned */}
   <h1 className="text-3xl xs:text-4xl sm:text-4.5xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 drop-shadow-2xl leading-tight">
     The Heart of Nigerian Home <br className="sm:hidden" /> Cooking
   </h1>
@@ -44,7 +42,7 @@ export default function Home() {
 </div>
       </section>
 
-      {/* Search Bar – optional, made subtle and centered (remove if you don't want it) */}
+      {/* Search Bar*/}
       <div className="relative z-30 -mt-12 px-6 sm:px-10 md:px-16 lg:px-24">
         <div className="max-w-4xl mx-auto">
           <div className="relative">

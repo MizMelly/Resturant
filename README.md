@@ -95,7 +95,7 @@ Live Preview (Optional)
 
 Netlify:
 
-https://your-project-name.netlify.app
+https://dashing-basbousa-73d3af.netlify.app/
 
 Submission Contents
 
