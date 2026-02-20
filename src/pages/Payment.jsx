@@ -1,13 +1,24 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Payment() {
   const [paymentMethod, setPaymentMethod] = useState('card');
-
   const totalAmount = 9900;
+  const navigate = useNavigate(); // <-- useNavigate hook
+
+  const handlePay = () => {
+    // Example: simulate payment processing
+    const success = Math.random() > 0.3; // 70% chance of success
+    if (success) {
+      navigate('/payment-loading'); // go to loading page
+    } else {
+      navigate('/order-failed'); // go to failure page
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-gray-50 font-sans py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-lg mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
+    <div className="min-h-screen bg-gray-50 font-sans flex justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-lg bg-white rounded-2xl shadow-lg overflow-auto">
         {/* Header */}
         <div className="px-6 py-8 border-b border-gray-200">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 text-center">
@@ -23,45 +34,25 @@ export default function Payment() {
               Pay With:
             </label>
             <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-12">
-              <label className="flex items-center gap-3 cursor-pointer">
-                <input
-                  type="radio"
-                  name="paymentMethod"
-                  value="card"
-                  checked={paymentMethod === 'card'}
-                  onChange={() => setPaymentMethod('card')}
-                  className="w-5 h-5 accent-orange-500"
-                />
-                <span className="text-lg font-medium text-gray-800">Card</span>
-              </label>
-
-              <label className="flex items-center gap-3 cursor-pointer">
-                <input
-                  type="radio"
-                  name="paymentMethod"
-                  value="bank"
-                  checked={paymentMethod === 'bank'}
-                  onChange={() => setPaymentMethod('bank')}
-                  className="w-5 h-5 accent-orange-500"
-                />
-                <span className="text-lg font-medium text-gray-800">Bank</span>
-              </label>
-
-              <label className="flex items-center gap-3 cursor-pointer">
-                <input
-                  type="radio"
-                  name="paymentMethod"
-                  value="transfer"
-                  checked={paymentMethod === 'transfer'}
-                  onChange={() => setPaymentMethod('transfer')}
-                  className="w-5 h-5 accent-orange-500"
-                />
-                <span className="text-lg font-medium text-gray-800">Transfer</span>
-              </label>
+              {['card', 'bank', 'transfer'].map((method) => (
+                <label key={method} className="flex items-center gap-3 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="paymentMethod"
+                    value={method}
+                    checked={paymentMethod === method}
+                    onChange={() => setPaymentMethod(method)}
+                    className="w-5 h-5 accent-orange-500"
+                  />
+                  <span className="text-lg font-medium text-gray-800">
+                    {method.charAt(0).toUpperCase() + method.slice(1)}
+                  </span>
+                </label>
+              ))}
             </div>
           </div>
 
-          {/* Card Details – shown only when Card selected */}
+          {/* Card Details */}
           {paymentMethod === 'card' && (
             <div className="space-y-6">
               <div>
@@ -117,18 +108,13 @@ export default function Payment() {
 
           {/* Pay Button */}
           <div className="pt-6">
-            <button className="w-full bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white py-5 rounded-xl font-bold text-xl transition shadow-md hover:shadow-lg">
+            <button
+              onClick={handlePay} // <-- add this
+              className="w-full bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white py-5 rounded-xl font-bold text-xl transition shadow-md hover:shadow-lg"
+            >
               Pay ₦{totalAmount.toLocaleString()}
             </button>
           </div>
-
-          {/* Privacy Notice */}
-          <p className="text-sm text-gray-500 text-center pt-4">
-            Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our{' '}
-            <Link to="/privacy-policy" className="text-orange-600 hover:underline">
-              privacy policy
-            </Link>.
-          </p>
         </div>
       </div>
     </div>
