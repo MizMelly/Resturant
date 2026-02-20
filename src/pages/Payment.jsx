@@ -4,15 +4,15 @@ import { useNavigate } from 'react-router-dom';
 export default function Payment() {
   const [paymentMethod, setPaymentMethod] = useState('card');
   const totalAmount = 9900;
-  const navigate = useNavigate(); // <-- useNavigate hook
+  const navigate = useNavigate(); 
 
   const handlePay = () => {
     // Example: simulate payment processing
-    const success = Math.random() > 0.3; // 70% chance of success
+    const success = Math.random() > 0.3; 
     if (success) {
-      navigate('/payment-loading'); // go to loading page
+      navigate('/payment-loading'); 
     } else {
-      navigate('/order-failed'); // go to failure page
+      navigate('/order-failed'); 
     }
   };
 
@@ -109,11 +109,13 @@ export default function Payment() {
           {/* Pay Button */}
           <div className="pt-6">
             <button
-              onClick={handlePay} // <-- add this
-              className="w-full bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white py-5 rounded-xl font-bold text-xl transition shadow-md hover:shadow-lg"
-            >
-              Pay ₦{totalAmount.toLocaleString()}
-            </button>
+  onClick={handlePay}
+  className="w-full bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white py-5 rounded-xl font-bold text-xl transition shadow-md hover:shadow-lg"
+>
+  Pay ₦{totalAmount.toLocaleString()}
+</button>
+
+          
           </div>
         </div>
       </div>

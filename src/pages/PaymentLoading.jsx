@@ -6,8 +6,8 @@ export default function PaymentLoading() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigate("/order-success"); // ✅ ALWAYS go to success
-    }, 3000); // 3 seconds loading
+      navigate('../order-success'); 
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, [navigate]);
