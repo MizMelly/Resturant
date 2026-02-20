@@ -189,6 +189,15 @@ export default function Explore() {
                 </Link>
               ))}
             </div>
+             {/* View All – only on mobile*/}
+          <div className="mt-6 text-center md:hidden">
+            <Link
+              to="/explore"
+              className="text-blue-600 hover:text-blue-800 font-medium text-base"
+            >
+              View All Categories
+            </Link>
+          </div>
           </div>
 
           {/* Jollof Rice & Entrees */}
@@ -221,6 +230,15 @@ export default function Explore() {
                 </Link>
               ))}
             </div>
+           {/* View All – only on mobile*/}
+          <div className="mt-6 text-center md:hidden">
+            <Link
+              to="/explore"
+              className="text-blue-600 hover:text-blue-800 font-medium text-base"
+            >
+              View All Categories
+            </Link>
+          </div>
           </div>
 
           {/* Swallow & Soups */}
@@ -253,6 +271,15 @@ export default function Explore() {
                 </Link>
               ))}
             </div>
+          </div>
+           {/* View All – only on mobile*/}
+          <div className="mt-6 text-center md:hidden">
+            <Link
+              to="/explore"
+              className="text-blue-600 hover:text-blue-800 font-medium text-base"
+            >
+              View All Categories
+            </Link>
           </div>
         </div>
       </section>

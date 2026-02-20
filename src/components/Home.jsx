@@ -4,12 +4,10 @@ import popular1 from "../assets/popular1.png";
 import popular2 from "../assets/popular2.png";
 import popular3 from "../assets/popular3.png";
 import newMenuImg from "../assets/22.png";
-
 // Chef's specials images
 const chef1 = popular1;
 const chef2 = popular2;
 const chef3 = popular3;
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-white font-sans overflow-x-hidden select-none cursor-default">
@@ -25,7 +23,6 @@ export default function Home() {
           {/* Stronger gradient overlay for text readability */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/70" />
         </div>
-
         {/* Text + Button – fully left-aligned, smaller headline */}
         <div className="relative z-10 px-6 sm:px-10 md:px-16 lg:px-24 text-white text-left max-w-5xl mx-auto">
           {/* Smaller headline – fits better on one line, left-aligned */}
@@ -43,7 +40,6 @@ export default function Home() {
           </Link>
         </div>
       </section>
-
       {/* Search Bar – pushed down a little */}
       <div className="relative z-30 -mt-8 sm:-mt-10 px-6 sm:px-10 md:px-16 lg:px-24">
         <div className="max-w-4xl mx-auto">
@@ -61,14 +57,13 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       {/* POPULAR CATEGORIES */}
-      <section className="pt-20 sm:pt-24 md:pt-32 pb-12 sm:pb-16 md:pb-20 bg-white relative z-10">
+      <section className="pt-24 sm:pt-28 md:pt-36 pb-16 sm:pb-20 md:pb-24 bg-white relative z-10">
         <div className="max-w-7xl mx-auto px-5 sm:px-6">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-10 sm:mb-14">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-12 sm:mb-16 md:mb-20">
             Popular Categories
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
             {[
               { img: popular1, title: "Jollof Delights" },
               { img: popular2, title: "Swallow & Soups" },
@@ -79,25 +74,32 @@ export default function Home() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
+                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col"
               >
                 <img
                   src={item.img}
                   alt={item.title}
                   className="w-full aspect-[4/3] sm:aspect-[5/4] object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                <div className="absolute bottom-5 sm:bottom-6 left-5 sm:left-6 text-white">
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold drop-shadow-md">
+                <div className="p-8 sm:p-10 md:p-12 text-center bg-white">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">
                     {item.title}
                   </h3>
                 </div>
               </div>
             ))}
           </div>
+          {/* View All – only on mobile, now blue text link without underline */}
+          <div className="mt-6 text-center md:hidden">
+            <Link
+              to="/explore"
+              className="text-blue-600 hover:text-blue-800 font-medium text-base"
+            >
+              View All Categories
+            </Link>
+          </div>
         </div>
       </section>
-
       {/* CHEF'S SPECIALS */}
       <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-5 sm:px-6">
@@ -136,9 +138,17 @@ export default function Home() {
               </div>
             ))}
           </div>
+          {/* View All – only on mobile*/}
+          <div className="mt-6 text-center md:hidden">
+            <Link
+              to="/explore"
+              className="text-blue-600 hover:text-blue-800 font-medium text-base"
+            >
+              View All Categories
+            </Link>
+          </div>
         </div>
       </section>
-
       {/* NEW MENU ADDITIONS */}
       <section className="relative py-20 sm:py-28 md:py-36 lg:py-40 bg-gray-900 overflow-hidden">
         <div className="absolute inset-0 z-0">

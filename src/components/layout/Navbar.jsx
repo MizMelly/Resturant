@@ -43,11 +43,11 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Login Button – desktop only */}
+        {/* Login Button – desktop only, made longer */}
         <div className="hidden md:block">
           <Link
             to="/signin"
-            className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-full font-medium transition shadow-md hover:shadow-lg whitespace-nowrap text-base"
+            className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-1.5 rounded-lg font-medium transition shadow-md hover:shadow-lg whitespace-nowrap text-base"
           >
             Login
           </Link>
@@ -104,7 +104,7 @@ export default function Navbar() {
 
           <Link
             to="/signin"
-            className="mt-12 bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-semibold text-center transition shadow-md"
+            className="mt-12 bg-orange-500 hover:bg-orange-600 text-white px-10 py-3.5 rounded-lg font-semibold text-center transition shadow-md"
             onClick={() => setIsMenuOpen(false)}
           >
             Login

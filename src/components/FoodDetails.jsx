@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Added this import
 import dishImage from "../assets/food detail.png";
 
 export default function FoodDetails() {
   const [protein, setProtein] = useState("chicken");
+  const navigate = useNavigate(); // Added this hook
 
   return (
     <div className="min-h-screen bg-[#f5f5f5]">
@@ -18,8 +20,9 @@ export default function FoodDetails() {
 
         {/* RIGHT PANEL */}
         <div className="w-full md:w-1/2 bg-white md:px-10 md:py-10 p-6 relative flex flex-col">
-          {/* Close button */}
+          {/* Close button – now functional */}
           <button
+            onClick={() => navigate(-1)} // Added this to go back
             className="absolute top-5 right-5 w-9 h-9 bg-black/80 text-white text-xl flex items-center justify-center rounded-full shadow-md z-10 hover:bg-black transition"
           >
             ✕
