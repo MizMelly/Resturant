@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 // images
 import heroImg from "../assets/explore-hero.png";     
@@ -159,7 +159,7 @@ export default function Explore() {
             </div>
           </div>
 
-          {/* Popular – larger cards, better spacing */}
+          {/* Popular */}
           <div className="mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10 text-center md:text-left">
               Popular
@@ -168,19 +168,35 @@ export default function Explore() {
               {popularDishes.map((dish, index) => (
                 <Link
                   key={index}
-                  to={`/food/${index}`} // ← links to Food Details page
+                  to={`/food/${index}`}
                   className="block hover:scale-[1.03] transition-transform duration-300"
                 >
-                  <div className="bg-white rounded-2xl shadow-md overflow-hidden">
-                    <img src={dish.image} alt={dish.name} className="w-full h-56 md:h-64 object-cover" />
-                    <div className="p-5 md:p-6">
-                      <h3 className="font-bold text-lg md:text-xl text-gray-900 mb-2 line-clamp-2">{dish.name}</h3>
-                      <p className="text-sm md:text-base text-gray-600 mb-4 line-clamp-3">{dish.description}</p>
+                  <div className="bg-white rounded-2xl shadow-md overflow-hidden flex flex-row md:flex-col">
+                    {/* Image on left (mobile) / top (desktop) */}
+                    <div className="w-1/3 md:w-full h-32 md:h-56 flex-shrink-0 overflow-hidden">
+                      <img
+                        src={dish.image}
+                        alt={dish.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+
+                    {/* Details on right (mobile) / bottom (desktop) */}
+                    <div className="flex-1 p-4 md:p-6 flex flex-col justify-between">
+                      <div>
+                        <h3 className="font-bold text-base md:text-xl text-gray-900 mb-1 md:mb-2 line-clamp-2">
+                          {dish.name}
+                        </h3>
+                        <p className="text-xs md:text-sm text-gray-600 mb-2 md:mb-4 line-clamp-2 md:line-clamp-3">
+                          {dish.description}
+                        </p>
+                      </div>
+
                       <div className="flex items-center justify-between">
-                        <span className="text-xl md:text-2xl font-bold text-orange-600">
+                        <span className="text-lg md:text-2xl font-bold text-orange-600">
                           ₦{dish.price.toLocaleString()}
                         </span>
-                        <button className="bg-orange-500 hover:bg-orange-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold transition shadow-md hover:shadow-lg">
+                        <button className="bg-orange-500 hover:bg-orange-600 text-white w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-lg md:text-xl font-bold transition shadow-md hover:shadow-lg">
                           +
                         </button>
                       </div>
@@ -189,15 +205,15 @@ export default function Explore() {
                 </Link>
               ))}
             </div>
-             {/* View All – only on mobile*/}
-          <div className="mt-6 text-center md:hidden">
-            <Link
-              to="/explore"
-              className="text-blue-600 hover:text-blue-800 font-medium text-base"
-            >
-              View All Categories
-            </Link>
-          </div>
+            {/* View All – only on mobile */}
+            <div className="mt-6 text-center md:hidden">
+              <Link
+                to="/explore"
+                className="text-blue-600 hover:text-blue-800 font-medium text-base"
+              >
+                View All Categories
+              </Link>
+            </div>
           </div>
 
           {/* Jollof Rice & Entrees */}
@@ -212,16 +228,32 @@ export default function Explore() {
                   to={`/food/${index}`}
                   className="block hover:scale-[1.03] transition-transform duration-300"
                 >
-                  <div className="bg-white rounded-2xl shadow-md overflow-hidden">
-                    <img src={dish.image} alt={dish.name} className="w-full h-56 md:h-64 object-cover" />
-                    <div className="p-5 md:p-6">
-                      <h3 className="font-bold text-lg md:text-xl text-gray-900 mb-2 line-clamp-2">{dish.name}</h3>
-                      <p className="text-sm md:text-base text-gray-600 mb-4 line-clamp-3">{dish.description}</p>
+                  <div className="bg-white rounded-2xl shadow-md overflow-hidden flex flex-row md:flex-col">
+                    {/* Image on left (mobile) / top (desktop) */}
+                    <div className="w-1/3 md:w-full h-32 md:h-56 flex-shrink-0 overflow-hidden">
+                      <img
+                        src={dish.image}
+                        alt={dish.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+
+                    {/* Details on right (mobile) / bottom (desktop) */}
+                    <div className="flex-1 p-4 md:p-6 flex flex-col justify-between">
+                      <div>
+                        <h3 className="font-bold text-base md:text-xl text-gray-900 mb-1 md:mb-2 line-clamp-2">
+                          {dish.name}
+                        </h3>
+                        <p className="text-xs md:text-sm text-gray-600 mb-2 md:mb-4 line-clamp-2 md:line-clamp-3">
+                          {dish.description}
+                        </p>
+                      </div>
+
                       <div className="flex items-center justify-between">
-                        <span className="text-xl md:text-2xl font-bold text-orange-600">
+                        <span className="text-lg md:text-2xl font-bold text-orange-600">
                           ₦{dish.price.toLocaleString()}
                         </span>
-                        <button className="bg-orange-500 hover:bg-orange-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold transition shadow-md hover:shadow-lg">
+                        <button className="bg-orange-500 hover:bg-orange-600 text-white w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-lg md:text-xl font-bold transition shadow-md hover:shadow-lg">
                           +
                         </button>
                       </div>
@@ -230,15 +262,15 @@ export default function Explore() {
                 </Link>
               ))}
             </div>
-           {/* View All – only on mobile*/}
-          <div className="mt-6 text-center md:hidden">
-            <Link
-              to="/explore"
-              className="text-blue-600 hover:text-blue-800 font-medium text-base"
-            >
-              View All Categories
-            </Link>
-          </div>
+            {/* View All – only on mobile */}
+            <div className="mt-6 text-center md:hidden">
+              <Link
+                to="/explore"
+                className="text-blue-600 hover:text-blue-800 font-medium text-base"
+              >
+                View All Categories
+              </Link>
+            </div>
           </div>
 
           {/* Swallow & Soups */}
@@ -253,16 +285,32 @@ export default function Explore() {
                   to={`/food/${index}`}
                   className="block hover:scale-[1.03] transition-transform duration-300"
                 >
-                  <div className="bg-white rounded-2xl shadow-md overflow-hidden">
-                    <img src={dish.image} alt={dish.name} className="w-full h-56 md:h-64 object-cover" />
-                    <div className="p-5 md:p-6">
-                      <h3 className="font-bold text-lg md:text-xl text-gray-900 mb-2 line-clamp-2">{dish.name}</h3>
-                      <p className="text-sm md:text-base text-gray-600 mb-4 line-clamp-3">{dish.description}</p>
+                  <div className="bg-white rounded-2xl shadow-md overflow-hidden flex flex-row md:flex-col">
+                    {/* Image on left (mobile) / top (desktop) */}
+                    <div className="w-1/3 md:w-full h-32 md:h-56 flex-shrink-0 overflow-hidden">
+                      <img
+                        src={dish.image}
+                        alt={dish.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+
+                    {/* Details on right (mobile) / bottom (desktop) */}
+                    <div className="flex-1 p-4 md:p-6 flex flex-col justify-between">
+                      <div>
+                        <h3 className="font-bold text-base md:text-xl text-gray-900 mb-1 md:mb-2 line-clamp-2">
+                          {dish.name}
+                        </h3>
+                        <p className="text-xs md:text-sm text-gray-600 mb-2 md:mb-4 line-clamp-2 md:line-clamp-3">
+                          {dish.description}
+                        </p>
+                      </div>
+
                       <div className="flex items-center justify-between">
-                        <span className="text-xl md:text-2xl font-bold text-orange-600">
+                        <span className="text-lg md:text-2xl font-bold text-orange-600">
                           ₦{dish.price.toLocaleString()}
                         </span>
-                        <button className="bg-orange-500 hover:bg-orange-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold transition shadow-md hover:shadow-lg">
+                        <button className="bg-orange-500 hover:bg-orange-600 text-white w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-lg md:text-xl font-bold transition shadow-md hover:shadow-lg">
                           +
                         </button>
                       </div>
@@ -271,15 +319,6 @@ export default function Explore() {
                 </Link>
               ))}
             </div>
-          </div>
-           {/* View All – only on mobile*/}
-          <div className="mt-6 text-center md:hidden">
-            <Link
-              to="/explore"
-              className="text-blue-600 hover:text-blue-800 font-medium text-base"
-            >
-              View All Categories
-            </Link>
           </div>
         </div>
       </section>

@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Added this import
+import { useNavigate } from "react-router-dom";
 import dishImage from "../assets/food detail.png";
 
 export default function FoodDetails() {
   const [protein, setProtein] = useState("chicken");
-  const navigate = useNavigate(); // Added this hook
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-[#f5f5f5]">
-      <div className="flex min-h-screen">
-        {/* LEFT IMAGE - hidden on mobile */}
-        <div className="w-1/2 hidden md:block">
+      <div className="flex flex-col md:flex-row min-h-screen">
+        {/* IMAGE – on top on mobile, left on desktop */}
+        <div className="w-full md:w-1/2 md:h-screen overflow-hidden order-1 md:order-none">
           <img
             src={dishImage}
             alt="Jollof Rice with Fried Chicken"
@@ -18,11 +18,11 @@ export default function FoodDetails() {
           />
         </div>
 
-        {/* RIGHT PANEL */}
-        <div className="w-full md:w-1/2 bg-white md:px-10 md:py-10 p-6 relative flex flex-col">
+        {/* RIGHT PANEL – below image on mobile */}
+        <div className="w-full md:w-1/2 bg-white md:px-10 md:py-10 p-6 relative flex flex-col order-2 md:order-none">
           {/* Close button – now functional */}
           <button
-            onClick={() => navigate(-1)} // Added this to go back
+            onClick={() => navigate(-1)}
             className="absolute top-5 right-5 w-9 h-9 bg-black/80 text-white text-xl flex items-center justify-center rounded-full shadow-md z-10 hover:bg-black transition"
           >
             ✕
@@ -63,18 +63,23 @@ export default function FoodDetails() {
             {/* Customize section */}
             <h3 className="font-semibold text-xl mb-6">Customize Your Meal</h3>
 
-            {/* Choose Protein */}
+            {/* Choose Protein – allow multiple selection */}
             <div className="mb-8">
               <h4 className="font-semibold text-lg mb-4">Choose Your Protein</h4>
               <div className="space-y-3">
                 <label className="flex items-center justify-between border border-gray-300 rounded-xl px-5 py-4 cursor-pointer hover:bg-gray-50 transition">
                   <div className="flex items-center gap-4">
                     <input
-                      type="radio"
-                      name="protein"
-                      value="chicken"
-                      checked={protein === "chicken"}
-                      onChange={() => setProtein("chicken")}
+                      type="checkbox" // Changed from radio to checkbox
+                      name="protein-chicken"
+                      checked={protein.includes("chicken")}
+                      onChange={() => {
+                        setProtein((prev) =>
+                          prev.includes("chicken")
+                            ? prev.filter((p) => p !== "chicken")
+                            : [...prev, "chicken"]
+                        );
+                      }}
                       className="w-5 h-5 accent-orange-500"
                     />
                     <span className="font-medium">Fried Chicken</span>
@@ -85,11 +90,16 @@ export default function FoodDetails() {
                 <label className="flex items-center justify-between border border-gray-300 rounded-xl px-5 py-4 cursor-pointer hover:bg-gray-50 transition">
                   <div className="flex items-center gap-4">
                     <input
-                      type="radio"
-                      name="protein"
-                      value="fish"
-                      checked={protein === "fish"}
-                      onChange={() => setProtein("fish")}
+                      type="checkbox" // Changed from radio to checkbox
+                      name="protein-fish"
+                      checked={protein.includes("fish")}
+                      onChange={() => {
+                        setProtein((prev) =>
+                          prev.includes("fish")
+                            ? prev.filter((p) => p !== "fish")
+                            : [...prev, "fish"]
+                        );
+                      }}
                       className="w-5 h-5 accent-orange-500"
                     />
                     <span className="font-medium">Grilled Fish</span>
@@ -100,11 +110,16 @@ export default function FoodDetails() {
                 <label className="flex items-center justify-between border border-gray-300 rounded-xl px-5 py-4 cursor-pointer hover:bg-gray-50 transition">
                   <div className="flex items-center gap-4">
                     <input
-                      type="radio"
-                      name="protein"
-                      value="beef"
-                      checked={protein === "beef"}
-                      onChange={() => setProtein("beef")}
+                      type="checkbox" // Changed from radio to checkbox
+                      name="protein-beef"
+                      checked={protein.includes("beef")}
+                      onChange={() => {
+                        setProtein((prev) =>
+                          prev.includes("beef")
+                            ? prev.filter((p) => p !== "beef")
+                            : [...prev, "beef"]
+                        );
+                      }}
                       className="w-5 h-5 accent-orange-500"
                     />
                     <span className="font-medium">Beef</span>

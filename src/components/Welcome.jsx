@@ -1,32 +1,31 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import Im1 from "../assets/Im1.png";      // Desktop/large screen image
-import Im2 from "../assets/Im1-mobile.png";         
+import Im1 from "../assets/Im1.png"; // Desktop/large screen image
+import Im2 from "../assets/Im1-mobile.png";
 
 export default function Welcome() {
   const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-[#f6f3ee] flex flex-col overflow-x-hidden">
-      <div className="flex-grow grid md:grid-cols-2">
+      <div className="flex-grow grid md:grid-cols-2 md:grid-rows-1 md:min-h-screen">
 
-        {/* LEFT IMAGE – mobile: full width on top, desktop: full height on left */}
-        <div className="w-full md:h-screen overflow-hidden order-1 md:order-none">
+        {/* LEFT IMAGE – full height on desktop, touches footer, no bottom gap */}
+        <div className="w-full md:h-screen md:min-h-screen overflow-hidden order-1 md:order-none">
           <picture>
             {/* Mobile version: Im2 */}
             <source media="(max-width: 767px)" srcSet={Im2} />
-            {/* Desktop version: Im1 */}
+            {/* Desktop version: Im1 – full stretch to bottom */}
             <img
               src={Im1}
               alt="Nigerian family enjoying meal"
-              className="w-full h-auto md:h-full object-cover"
+              className="w-full h-full object-cover"
             />
           </picture>
         </div>
 
         {/* RIGHT SIDE – full width on mobile */}
-        <div className="flex flex-col px-5 sm:px-8 md:px-12 lg:px-16 py-8 md:py-12 bg-[#f6f3ee] order-2 md:order-none">
-
+        <div className="flex flex-col px-5 sm:px-8 md:px-12 lg:px-16 py-8 md:py-12 bg-white order-2 md:order-none">
           {/* TOP HEADER – Sign In up, logo down ONLY on mobile */}
           <div className="mb-8 md:mb-12">
             {/* Sign In button first on mobile */}
@@ -51,39 +50,46 @@ export default function Welcome() {
           <div className="flex-grow flex flex-col justify-center">
             <div className="w-full max-w-4xl mx-auto space-y-8 md:space-y-10">
 
-            {/* Headline */}
-            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-900 leading-tight">
-              Your Authentic Taste<br className="sm:hidden" /> of Nigeria</h1>
+              {/* Headline */}
+              <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-900 leading-tight">
+                Your Authentic Taste<br className="sm:hidden" /> of Nigeria
+              </h1>
 
               <p className="text-gray-600 text-base sm:text-lg md:text-xl leading-relaxed">
-                Experience homemade flavors delivered fresh to your desk or home.  
+                Experience homemade flavors delivered fresh to your desk or home.
                 We bring the rich culinary heritage of Nigeria right to your doorstep.
               </p>
 
               {/* FEATURES */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 pt-4 md:pt-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 pt-4 md:pt-6">
                 {/* First item */}
-                <div className="flex items-center gap-3 sm:gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-orange-100 text-orange-600 flex items-center justify-center rounded-full text-2xl sm:text-3xl shadow-sm">
+                <div className="flex items-center gap-3 sm:gap-4 bg-gray-100 md:bg-transparent p-3 sm:p-4 rounded-xl">
+                  <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-orange-100 text-orange-600 flex items-center justify-center rounded-full text-2xl sm:text-3xl">
                     🍴
                   </div>
-                  <p className="text-gray-700 font-medium text-base sm:text-lg">Freshly Prepared</p>
+                  <p className="text-gray-800 font-medium text-base sm:text-lg">
+                    Freshly Prepared
+                  </p>
                 </div>
 
                 {/* Second item */}
-                <div className="flex items-center gap-3 sm:gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-orange-100 text-orange-600 flex items-center justify-center rounded-full text-2xl sm:text-3xl shadow-sm">
+                <div className="flex items-center gap-3 sm:gap-4 bg-gray-100 md:bg-transparent p-3 sm:p-4 rounded-xl">
+                  <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-orange-100 text-orange-600 flex items-center justify-center rounded-full text-2xl sm:text-3xl">
                     🤝
                   </div>
-                  <p className="text-gray-700 font-medium text-base sm:text-lg">Support Local Business</p>
+                  <p className="text-gray-800 font-medium text-base sm:text-lg">
+                    Support Local Business
+                  </p>
                 </div>
 
                 {/* Third item */}
-                <div className="flex items-center gap-3 sm:gap-4 md:col-span-2">
-                  <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-orange-100 text-orange-600 flex items-center justify-center rounded-full text-2xl sm:text-3xl shadow-sm">
+                <div className="flex items-center gap-3 sm:gap-4 md:col-span-2 bg-gray-100 md:bg-transparent p-3 sm:p-4 rounded-xl">
+                  <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-orange-100 text-orange-600 flex items-center justify-center rounded-full text-2xl sm:text-3xl">
                     🚚
                   </div>
-                  <p className="text-gray-700 font-medium text-base sm:text-lg">Fast & Reliable Delivery</p>
+                  <p className="text-gray-800 font-medium text-base sm:text-lg">
+                    Fast & Reliable Delivery
+                  </p>
                 </div>
               </div>
 
@@ -106,7 +112,7 @@ export default function Welcome() {
               <div className="hidden md:block">
                 <hr className="my-4 md:my-5 border-t border-gray-300 w-full max-w-3xl mx-auto" />
                 <p className="text-center text-gray-500 text-sm">
-                  © 2024 Chuks Kitchen. 
+                  © 2024 Chuks Kitchen.
                   <a href="/privacy" className="text-blue-500 hover:text-gray-700 mx-2">Privacy Policy</a>
                   <a href="/terms" className="text-blue-500 hover:text-gray-700 mx-2">Terms of Service</a>
                 </p>
