@@ -1,5 +1,10 @@
 # Chuks Kitchen – Food Ordering Web App (Frontend)
 
+Deployment Link: https://dashing-basbousa-73d3af.netlify.app/
+
+Login is Static so you can use any Email or Password to Access the site
+Example: Email: Johndoe@gmail.com Password: Password 
+
 ## Technical Documentation: Setup, Running & Project Notes
 
 ### 1. Prerequisites
@@ -143,15 +148,14 @@ src/
 ### What I would improve with more time
 
 1. **State management** — Zustand or Context for cart & user state
-2. **Backend integration** — mock or real API (Supabase / Firebase)
-3. **Authentication** — login/signup flow + protected routes
-4. **Persistence** — localStorage / IndexedDB for cart
-5. **Accessibility** — ARIA labels, keyboard navigation, contrast checks
-6. **Animations** — Framer Motion for cart add/remove, page transitions
-7. **Testing** — Vitest + React Testing Library
-8. **SEO** — React Helmet or meta tags
-9. **Performance** — Image optimization, lazy loading
-10. **Design system** — Storybook for components
+2. **Authentication** — login/signup flow + protected routes
+3. **Persistence** — localStorage / IndexedDB for cart
+4. **Accessibility** — ARIA labels, keyboard navigation, contrast checks
+5. **Animations** — Framer Motion for cart add/remove, page transitions
+6. **Testing** — Vitest + React Testing Library
+7. **SEO** — React Helmet or meta tags
+8. **Performance** — Image optimization, lazy loading
+9. **Design system** — Storybook for components
 
 ## Developer Handoff Notes
 
