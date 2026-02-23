@@ -1,5 +1,57 @@
 # Chuks Kitchen – Food Ordering Web App (Frontend)
 
+## Technical Documentation: Setup, Running & Project Notes
+
+### 1. Prerequisites
+Before running the project, ensure you have:
+
+- **Node.js** — v18 or higher (v20 recommended)
+  - Download: https://nodejs.org
+  - Verify: `node -v`
+
+- **npm** — v9 or higher (comes with Node.js)
+  - Verify: `npm -v`
+
+- **Git** — for cloning the repository
+  - Verify: `git --version`
+
+### 2. Cloning the Project
+
+```bash
+# Clone from github
+git clone https://github.com/MizMelly/Resturant
+
+# Enter project directory
+cd Resturant
+
+INSTALLING DEPENDENCY
+# Using npm (recommended for consistency)
+npm install
+
+# OR using pnpm (faster & more disk-efficient)
+pnpm install
+
+# OR using Yarn
+yarn install
+
+RUNNING THE PROJECT
+# npm
+npm run dev
+
+# pnpm
+pnpm dev
+
+# yarn
+yarn dev
+→ Open in browser: http://localhost:5173 
+
+Build for production
+npm run build
+# output appears in /dist folder
+Preview production build locally
+npm run preview
+
+
 ## Project Overview
 
 This project is the **frontend** implementation of a modern, responsive food ordering web application for **Chuks Kitchen**, a Nigerian home-cooking restaurant.
