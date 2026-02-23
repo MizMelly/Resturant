@@ -62,7 +62,7 @@ export default function Welcome() {
 
               {/* FEATURES */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 pt-4 md:pt-6">
-                {/* First item */}
+                {/* First item – always 🍴 */}
                 <div className="flex items-center gap-3 sm:gap-4 bg-gray-100 md:bg-transparent p-3 sm:p-4 rounded-xl">
                   <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-orange-100 text-orange-600 flex items-center justify-center rounded-full text-2xl sm:text-3xl">
                     🍴
@@ -72,20 +72,26 @@ export default function Welcome() {
                   </p>
                 </div>
 
-                {/* Second item – use same icon 🍴 on mobile */}
+                {/* Second item – 🍴 on mobile, 🤝 on desktop */}
                 <div className="flex items-center gap-3 sm:gap-4 bg-gray-100 md:bg-transparent p-3 sm:p-4 rounded-xl">
-                  <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-orange-100 text-orange-600 flex items-center justify-center rounded-full text-2xl sm:text-3xl">
-                    🍴 {/* ← changed to same icon on mobile */}
+                  <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-orange-100 text-orange-600 flex items-center justify-center rounded-full text-2xl sm:text-3xl md:hidden">
+                    🍴
+                  </div>
+                  <div className="hidden md:flex flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-orange-100 text-orange-600 items-center justify-center rounded-full text-2xl sm:text-3xl">
+                    🤝
                   </div>
                   <p className="text-gray-800 font-medium text-base sm:text-lg">
                     Support Local Business
                   </p>
                 </div>
 
-                {/* Third item – use same icon 🍴 on mobile */}
+                {/* Third item – 🍴 on mobile, 🚚 on desktop */}
                 <div className="flex items-center gap-3 sm:gap-4 md:col-span-2 bg-gray-100 md:bg-transparent p-3 sm:p-4 rounded-xl">
-                  <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-orange-100 text-orange-600 flex items-center justify-center rounded-full text-2xl sm:text-3xl">
-                    🍴 {/* ← changed to same icon on mobile */}
+                  <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-orange-100 text-orange-600 flex items-center justify-center rounded-full text-2xl sm:text-3xl md:hidden">
+                    🍴
+                  </div>
+                  <div className="hidden md:flex flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-orange-100 text-orange-600 items-center justify-center rounded-full text-2xl sm:text-3xl">
+                    🚚
                   </div>
                   <p className="text-gray-800 font-medium text-base sm:text-lg">
                     Fast & Reliable Delivery
