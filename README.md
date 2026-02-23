@@ -1,111 +1,115 @@
-.
+# Chuks Kitchen – Food Ordering Web App (Frontend)
 
-🍽️ Food Ordering Web App (Frontend)
-Project Overview
+## Project Overview
 
-This project is a responsive food ordering web application frontend built using React and Tailwind CSS, based on a provided Figma design.
+This project is the **frontend** implementation of a modern, responsive food ordering web application for **Chuks Kitchen**, a Nigerian home-cooking restaurant.
 
-The page represents a food ordering experience where users can browse meals, view food details, add items to a cart, and move through checkout, delivery, and payment screens.
+The application allows users to:
+- View a welcoming hero section
+- Browse popular categories and dishes
+- See detailed food item pages with customization options (protein choice, extra sides)
+- Add items to cart
+- View cart summary with quantity controls and removal
+- Proceed to mock checkout flow
 
-The focus of this project is clear structure, accurate design implementation, and maintainable frontend code, rather than complex business logic.
+The current scope focuses on **UI/UX fidelity** to the provided Figma design, clean component architecture, mobile-first responsiveness, and maintainable code structure.
 
-Tech Stack Used
-Languages & Frameworks
+**No backend** is implemented — all data is static/mock.
 
-JavaScript (ES6+)
+## Tech Stack Used
 
-React
+| Category           | Technology              | Reason / Purpose                                                                 |
+|--------------------|-------------------------|----------------------------------------------------------------------------------|
+| Framework          | React 18                | Component-based UI, reusability, strong ecosystem                                |
+| Build Tool         | Vite                    | Lightning-fast dev server, modern build pipeline                                 |
+| Styling            | Tailwind CSS v3         | Rapid utility-first styling, matches Figma precisely, no custom CSS bloat       |
+| Routing            | React Router v6         | Clean client-side navigation and protected route patterns (future-ready)        |
+| State Management   | React useState          | Simple local component state (cart, selections) — no need for Redux yet          |
+| Icons/Images       | Static PNG imports      | Food photography and hero images from assets folder                             |
+| Deployment         | Netlify  https://dashing-basbousa-73d3af.netlify.app/  | Recommended for fast, free static React hosting                                 |
 
-Tailwind CSS
+**Why this stack?**  
+→ Fast development velocity  
+→ Excellent Figma → code translation using Tailwind  
+→ Easy to onboard new developers (no complex tooling)  
+→ Production-ready structure for future backend integration
 
-Libraries & Tools
-
-React Router – Client-side navigation
-
-Vite – Development and build tool
-
-Git & GitHub – Version control
-
-Netlify – Deployment (optional)
-
-Why This Stack
-
-React enables reusable, component-based development, while Tailwind CSS allows rapid styling that closely matches the Figma design. This stack supports fast development and easy handoff to another frontend developer.
-
-Project Structure
+## Project Structure
 src/
-│── assets/              # Images and static resources
-│── components/          # Reusable UI components
-│── components/layout/   # Shared layout components (Navbar, Footer)
-│── pages/               # Page-level components (Cart, Payment, Order flow)
-│── App.jsx              # Application routing configuration
-│── main.jsx             # Application entry point
-│── index.css            # Global styles and Tailwind setup
+├── assets/                     # All static images (hero, dishes, placeholders)
+├── components/                 # Reusable UI building blocks
+│   ├── layout/                 # Persistent layouts (Navbar, Footer, MainLayout)
+│   └── ui/                     # Small components (Button, Card, Badge, etc.)
+├── pages/                      # Page-level components (routed views)
+│   ├── Welcome.jsx             # Landing / onboarding page
+│   ├── Explore.jsx             # Menu browsing + categories
+│   ├── FoodDetails.jsx         # Single dish view + customization
+│   ├── Cart.jsx                # Cart summary + quantity controls
+│   └── ...                     # (Checkout, Payment, Order Confirmation – planned)
+├── App.jsx                     # Root component + routing configuration
+├── main.jsx                    # Entry point (ReactDOM.render)
+├── index.css                   # Tailwind base + global resets
+└── routes/                     # (optional) route path constants
 
-Routing & Navigation
+**Key files explained**
 
-Client-side routing is handled using React Router with a layout-based approach.
+- `App.jsx` → central routing setup (BrowserRouter + Routes)
+- `main.jsx` → React entry point (no logic here)
+- `index.css` → imports Tailwind + any global font or reset styles
+- `pages/` → each major screen lives here (easy to find)
+- `components/layout/` → shared wrappers (keeps pages clean)
 
-Pages that require a consistent layout (Navbar and Footer) are wrapped in a shared MainLayout.
+## Design Interpretation (Figma → Code)
 
-Onboarding and authentication pages (Welcome, Sign In, Sign Up) are rendered without the main layout to keep those flows simple and focused.
+- **Mobile-first** approach: most base classes are mobile, then `md:`, `lg:` overrides
+- **Spacing & sizing**: Used Tailwind spacing scale (p-3, p-6, space-y-4, etc.) to match Figma
+- **Colors**: Primary orange (`#c47a2c` / orange-600), blue accents, neutral grays
+- **Typography**: `Dancing Script` for logo/headings, system sans-serif for body
+- **Responsiveness**: Flex + Grid used everywhere; breakpoints follow Tailwind defaults (sm, md, lg)
+- **Cards & shadows**: Consistent `rounded-2xl`, `shadow-md`, `hover:shadow-lg`
+- **Image handling**: `object-cover` + fixed aspect ratios to prevent distortion
 
-Routing logic is intentionally kept in App.jsx to maintain clarity and avoid unnecessary abstraction.
+**Assumptions made due to missing design details**
 
-Design Interpretation (Figma → Code)
+- Hover states: added subtle scale + shadow (not always specified)
+- Active states: added `active:scale-95` on buttons
+- Font weights & sizes: approximated where not pixel-exact (e.g., heading sizes)
+- Loading/error states: not implemented (static data only)
+- Accessibility: basic (alt texts, semantic HTML) — not fully optimized yet
 
-Layouts were implemented using Flexbox and CSS Grid to match the Figma spacing and alignment.
+## Limitations & Planned Improvements
 
-Food details are presented in card-style containers to visually separate content.
+### Current Limitations
 
-Spacing was carefully applied to ensure content does not touch the navigation bar or food images.
+- No real backend / API (static mock data)
+- No authentication / user sessions
+- Cart is not persistent (resets on refresh)
+- No form validation or error messages
+- Limited accessibility (focus states, screen reader support)
+- No loading skeletons or optimistic UI
 
-The interface is responsive across mobile and desktop screen sizes.
+### What I would improve with more time
 
-Assumptions
+1. **State management** — Zustand or Context for cart & user state
+2. **Backend integration** — mock or real API (Supabase / Firebase)
+3. **Authentication** — login/signup flow + protected routes
+4. **Persistence** — localStorage / IndexedDB for cart
+5. **Accessibility** — ARIA labels, keyboard navigation, contrast checks
+6. **Animations** — Framer Motion for cart add/remove, page transitions
+7. **Testing** — Vitest + React Testing Library
+8. **SEO** — React Helmet or meta tags
+9. **Performance** — Image optimization, lazy loading
+10. **Design system** — Storybook for components
 
-Some font sizes and spacing values were approximated where exact specifications were not provided.
+## Developer Handoff Notes
 
-Hover and active states were added to improve usability where not explicitly defined.
+If you're continuing this project tomorrow:
 
-Limitations & Improvements
-Current Limitations
+- **Routing is in App.jsx** — add new `<Route>` there
+- **Use MainLayout** for pages that need navbar/footer
+- **Follow naming**: PascalCase components, kebab-case files
+- **Tailwind only** — avoid custom CSS unless absolutely necessary
+- **Mobile-first** — write base styles first, then `md:`, `lg:`
+- **Component composition** — prefer small, reusable pieces
+- **Static data** — currently in component files; move to separate data files later
 
-No backend or API integration
-
-Static food data
-
-No persistent authentication
-
-Limited accessibility features
-
-Future Improvements
-
-Backend and API integration
-
-Persistent cart state
-
-Improved accessibility support
-
-Form validation and error handling
-
-Automated testing
-
-Live Preview (Optional)
-
-Netlify:
-
-https://dashing-basbousa-73d3af.netlify.app/
-
-Submission Contents
-
-Source Code (GitHub Repository or ZIP)
-
-Documentation (README.md)
-
-Live Preview (optional)
-
-Developer Handoff Notes
-
-This project is organized for clarity and ease of continuation.
-New pages should follow the existing layout and routing patterns to maintain consistency.

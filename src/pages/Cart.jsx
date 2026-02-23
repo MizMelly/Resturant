@@ -47,14 +47,14 @@ export default function Cart() {
                   {item.name}
                 </h3>
 
-                {/* Description + all controls on one line on desktop */}
+                {/* Description */}
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between md:gap-6">
                   {/* Description */}
                   <p className="text-sm text-gray-600 mb-2 md:mb-0 md:flex-1 whitespace-nowrap md:whitespace-normal">
                     {item.note}
                   </p>
 
-                  {/* Quantity + price + × – same line on desktop */}
+                  {/* Quantity + price  */}
                   <div className="flex flex-col md:flex-row md:items-center md:gap-6 gap-2">
                     {/* Quantity */}
                     <div className="flex items-center justify-between md:justify-start gap-2 md:gap-4">

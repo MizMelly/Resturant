@@ -11,7 +11,7 @@ export default function Welcome() {
       <div className="flex-grow grid md:grid-cols-2 md:grid-rows-1 md:min-h-screen">
 
         {/* LEFT IMAGE – full height on desktop, touches footer, no bottom gap */}
-        <div className="w-full md:h-screen md:min-h-screen overflow-hidden order-1 md:order-none">
+        <div className="w-full md:min-h-screen md:h-screen overflow-hidden order-1 md:order-none">
           <picture>
             {/* Mobile version: Im2 */}
             <source media="(max-width: 767px)" srcSet={Im2} />
@@ -72,20 +72,20 @@ export default function Welcome() {
                   </p>
                 </div>
 
-                {/* Second item */}
+                {/* Second item – use same icon 🍴 on mobile */}
                 <div className="flex items-center gap-3 sm:gap-4 bg-gray-100 md:bg-transparent p-3 sm:p-4 rounded-xl">
                   <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-orange-100 text-orange-600 flex items-center justify-center rounded-full text-2xl sm:text-3xl">
-                    🤝
+                    🍴 {/* ← changed to same icon on mobile */}
                   </div>
                   <p className="text-gray-800 font-medium text-base sm:text-lg">
                     Support Local Business
                   </p>
                 </div>
 
-                {/* Third item */}
+                {/* Third item – use same icon 🍴 on mobile */}
                 <div className="flex items-center gap-3 sm:gap-4 md:col-span-2 bg-gray-100 md:bg-transparent p-3 sm:p-4 rounded-xl">
                   <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-orange-100 text-orange-600 flex items-center justify-center rounded-full text-2xl sm:text-3xl">
-                    🚚
+                    🍴 {/* ← changed to same icon on mobile */}
                   </div>
                   <p className="text-gray-800 font-medium text-base sm:text-lg">
                     Fast & Reliable Delivery
